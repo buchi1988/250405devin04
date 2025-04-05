@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
 import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
 import { Alert, AlertDescription, AlertTitle } from "../components/ui/alert";
 import { Badge } from "../components/ui/badge";
 import { Separator } from "../components/ui/separator";
-import { Search, MapPin, Heart, Cloud, CloudRain, Sun, Wind } from "lucide-react";
+import { Search, MapPin, Heart, Cloud, CloudRain, Sun } from "lucide-react";
 
 const API_KEY = "1635890035cbba097fd5c26c8ea672a1";
 const BASE_URL = "https://api.openweathermap.org/data/2.5";
