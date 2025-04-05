@@ -1,50 +1,111 @@
-# React + TypeScript + Vite
+# Weather Forecast App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive weather forecast application built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+![Weather Forecast App Screenshot](https://github.com/buchi1988/250405devin04/assets/screenshot.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **City Search**: Search for weather information by city name
+- **Current Weather**: View detailed current weather conditions
+- **5-Day Forecast**: See weather predictions for the next 5 days
+- **Favorites**: Save your favorite cities for quick access
+- **Responsive Design**: Works on desktop and mobile devices
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technologies Used
 
-- Configure the top-level `parserOptions` property like this:
+- **React**: Frontend library for building user interfaces
+- **TypeScript**: Type-safe JavaScript
+- **Vite**: Fast build tool and development server
+- **Tailwind CSS**: Utility-first CSS framework
+- **shadcn/ui**: High-quality UI components built with Radix UI and Tailwind
+- **OpenWeatherMap API**: Weather data provider
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm (v8 or higher)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/buchi1988/250405devin04.git
+   cd 250405devin04
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open your browser and navigate to:
+   ```
+   http://localhost:5173/250405devin04/
+   ```
+
+## Building for Production
+
+To build the application for production:
+
+```bash
+npm run build
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+The built files will be in the `dist` directory.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Project Structure
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
+src/
+├── components/         # UI components
+│   ├── ui/             # shadcn/ui components
+│   └── WeatherApp.tsx  # Main weather application component
+├── hooks/              # Custom React hooks
+├── App.tsx             # Main application component
+├── main.tsx            # Application entry point
+└── ...
+```
+
+## API Usage
+
+The application uses the OpenWeatherMap API to fetch weather data. The following endpoints are used:
+
+- Current weather: `api.openweathermap.org/data/2.5/weather`
+- 5-day forecast: `api.openweathermap.org/data/2.5/forecast`
+
+## Features in Detail
+
+### Current Weather
+
+Displays:
+- City name and country
+- Current temperature
+- Weather description
+- Feels like temperature
+- Humidity
+- Wind speed
+- Atmospheric pressure
+
+### 5-Day Forecast
+
+Shows a daily forecast for the next 5 days with:
+- Date
+- Weather icon
+- Temperature
+- Weather description
+- Humidity
+- Wind speed
+
+### Favorites
+
+- Add cities to favorites by clicking the heart icon
+- Favorites are stored in localStorage
+- Click on a favorite city to quickly load its weather data
